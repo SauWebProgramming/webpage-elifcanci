@@ -29,3 +29,13 @@ p {
     border-radius: 15px;
 
 }
+
+.map {
+    margin-top: 2.5cm; 
+}
+
+.anasayfa_butonu {
+    margin: 3rem; 
+    margin-left: 35rem; 
+    height: 1.5cm;
+}
