@@ -39,3 +39,9 @@ p {
     margin-left: 35rem; 
     height: 1.5cm;
 }
+
+.tabMenu{
+	position:fixed; top:0px; left:0px; right:0px; 
+    height:70px;
+    z-index: 999;
+}
