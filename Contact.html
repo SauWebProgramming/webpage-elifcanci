@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <title>content</title>
+    
   </head>
   <body>
     <!-- Navbar - Start -->
@@ -55,30 +56,32 @@
       <div class="row">
         <div class="col-sm-6" style="margin-top: 2rem;">
           <p class="mt-5">Your feedback is very important to me. Please share your views with me. 🙂</p> <br>
+          <form name="myForm" onsubmit="return validateForm()" method="post">
           <div class="row g-3">
             <div class="col">
-              <label for="exampleInputEmail1" class="form-label">Name</label>
-              <input type="text" class="form-control" aria-label="First name">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" name="name" class="form-control" aria-label="First name">
             </div>
             <div class="col">
-              <label for="exampleInputEmail1" class="form-label">Surname</label>
-              <input type="text" class="form-control" aria-label="Last name">
+              <label for="surname" class="form-label">Surname</label>
+              <input type="text" name="surname" class="form-control" aria-label="Last name">
             </div>
           </div>
           <div class="mb-3 mt-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
           </div>        
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Textarea</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
-          <button style="float: right; width: 2.5cm;" type="button" class="btn btn-outline-dark">SEND</button>
+        </form>
+          <button style="float: right; width: 2.5cm;" type="button" onclick="validateForm()" class="btn btn-outline-dark">SEND</button>
         </div>
         <div class="col-sm-6 map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.369169371009!2d30.334241512032573!3d40.740022568174105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e0!4m0!4m0!5e0!3m2!1str!2str!4v1639415231040!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -86,7 +89,30 @@
       </div>
     </div>
 
-
+  <script>
+    function validateForm() {
+      let x = document.forms["myForm"]["name"].value;
+      if (x == "") {
+        alert("Name input do not leave blank");
+        return false;
+      }
+      let y = document.forms["myForm"]["surname"].value;
+      if (y == "") {
+        alert("Surname input do not leave blank");
+        return false;
+      }
+      let z = document.forms["myForm"]["email"].value;
+      if (z == "") {
+        alert("Email input do not leave blank");
+        return false;
+      }
+      let k = document.forms["myForm"]["password"].value;
+      if (k == "") {
+        alert("Password input do not leave blank");
+        return false;
+      }
+    }
+  </script>
 
 
 
